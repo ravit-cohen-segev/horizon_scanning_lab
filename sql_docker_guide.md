@@ -1,6 +1,3 @@
-# horizon_scanning_lab
-MATRIX
-
 # Programs required for working with mysql docker:
 ## 1. *Docker Desktop* https://docs.docker.com/desktop/windows/install/
 ## 2. *MySQL workbench* https://dev.mysql.com/downloads/workbench/
