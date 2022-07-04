@@ -11,3 +11,5 @@ The video includes:
 4. start mysql image
 5. connect to database and run sql
 
+# Create database in mysql workbench and test_table in database
+![image](https://user-images.githubusercontent.com/67485297/177131706-259afaa5-9d58-4de0-81d4-fece7c503de1.png)
