@@ -2,7 +2,7 @@
 """
 Spyder Editor
 
-This is a temporary script file.
+Ravit Cohen-Segev
 """
 
 import pandas as pd 
