@@ -80,8 +80,8 @@ sql1 = "UPDATE {} AS t1 JOIN {} as t2 SET t1.col1 = t2.col1, \
 
 engine.execute(sql1)
    
-#%%remove the same rows from temp_table 
-sql2 = "DELETE FROM temp_table WHERE temp_table.ID = test_table.ID"
+#%%Add non-matching rows to test_table
+sql2 = "SELECT * FROM {} AS t1 LEFT JOIN {} AS t2 ON t1.ID = t2.ID WHERE t1.ID IS NULL".format(temp_table, test_table)
 
 
 engine.execute(sql2)
