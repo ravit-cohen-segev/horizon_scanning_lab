@@ -19,7 +19,7 @@ config = {
     'host': 'localhost',
     'port': 3306,
     'user': 'root',
-    'password': 'my-secret-pw',
+    'password': 'horizon-sql-pw',
     'database': 'mysqldb'   
 }
  
@@ -31,14 +31,14 @@ db_name = config.get('database')# specify connection string
 connection_str = f'mysql+pymysql://{db_user}:{db_pwd}@{db_host}:{db_port}/{db_name}'# connect to database
 engine = db.create_engine(connection_str)
 connection = engine.connect()# pull metadata of a table
-metadata = db.MetaData(bind=engine)
-metadata.reflect(only=['test_table'])
+#metadata = db.MetaData(bind=engine)
+#metadata.reflect(only=['test_table'])
 
-test_table = metadata.tables['test_table']
+#test_table = metadata.tables['test_table']
 
 #%% Read an example csv file I manually created and import csv into sql database
 
-path = r"C:\Users\97252\Documents\Ravit\horizon_scanning_lab\example"
+path = r"C:\Users\Ravit\Documents\matrix\horizon_scanning_lab\example"
     
 df = pd.read_csv(path)
 #drop Unnamed column
@@ -57,6 +57,7 @@ engine.execute("CREATE TABLE IF NOT EXISTS {} {}".format(table_name, table_cols)
 
 #convert to sql and  import into the temporary table
 df.to_sql(table_name, connection, if_exists='append', index=False)
+test_table = 'test_table'
 
 #%% create new df for updating the existing table in df
 
@@ -66,7 +67,6 @@ df2['ID'] = np.array([1,3,7])
 #create temp table
 temp_table = 'temp_table'
 
-temp_table_cols ='(ID int NOT NULL PRIMARY KEY, col2 int)'
 
 engine.execute("CREATE TABLE IF NOT EXISTS {} {}".format(temp_table, table_cols))
 df2.to_sql(temp_table, connection, if_exists='replace', index=False)
@@ -81,13 +81,8 @@ sql1 = "UPDATE {} AS t1 JOIN {} as t2 SET t1.col1 = t2.col1, \
 engine.execute(sql1)
    
 #%%Add non-matching rows to test_table
-sql2 = "SELECT * FROM {} AS t1 LEFT JOIN {} AS t2 ON t1.ID = t2.ID WHERE t1.ID IS NULL".format(temp_table, test_table)
-
+sql2 = "INSERT IGNORE INTO {} SELECT  * FROM {}".format(test_table, temp_table)
 
 engine.execute(sql2)
    
 
-
-
-
-#engine.execute()
