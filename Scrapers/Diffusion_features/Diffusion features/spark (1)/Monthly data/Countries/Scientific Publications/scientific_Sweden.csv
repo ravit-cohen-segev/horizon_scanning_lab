@@ -1,0 +1,28 @@
+source,2010-01-01T00:00:00Z,2011-01-01T00:00:00Z,2012-01-01T00:00:00Z,2013-01-01T00:00:00Z,2014-01-01T00:00:00Z,2015-01-01T00:00:00Z,2016-01-01T00:00:00Z,2017-01-01T00:00:00Z,2017-06-01T00:00:00Z,2018-01-01T00:00:00Z,2019-01-01T00:00:00Z,2020-01-01T00:00:00Z,2021-01-01T00:00:00Z
+Active noise control,,,1.0,,,,1.0,,,,,,
+Autonomous vehicle,,,,,,1.0,,,,,,,
+Carbon capture and storage,,1.0,,,1.0,,,1.0,,,,,
+Cloud computing,,,,,,,,,,,,,1.0
+Cryptocurrency,,,,,,,,,,,2.0,,
+Deep learning,,,1.0,,,,,,,,,,
+Electric vehicle,,,,,,1.0,2.0,3.0,,1.0,,,
+Energy harvesting,,1.0,1.0,,,,,,,,1.0,,
+Fuel cell,,,,1.0,,1.0,,,,,,,
+Fullerene,,,,1.0,,,,,,,,,
+Gasification,1.0,1.0,1.0,1.0,,1.0,,,,1.0,,,
+Graphene,,,1.0,1.0,,,1.0,,,,,2.0,
+High Entropy Alloys,,,,,,,,,,,,,1.0
+Internet of things,,,,,,,,1.0,,,,,
+Learning Management System,,1.0,,,,,,,,,,,
+Lidar,,,,1.0,,,,,,1.0,1.0,1.0,
+Life-cycle assessment,1.0,,2.0,1.0,,,,2.0,,1.0,1.0,,
+Mobile learning,,,,,,,,,,,3.0,,
+Neural Networks,,,,,,,,1.0,,,,,
+Quantum cryptography,,,,,,1.0,,,,,,,
+Regenerative Medicine,,1.0,,1.0,,,,1.0,1.0,1.0,,1.0,
+Smart grid,,,2.0,,1.0,,,,,,,,
+Smartphone,,,1.0,,,2.0,,,,2.0,1.0,,
+Spintronics,,,,,,,,,,,,1.0,
+Supercapacitor,,,,,,,,,,,,,1.0
+Virtual reality,2.0,,1.0,,,,,,,1.0,,2.0,
+aquaponics,,,,,,,,,,1.0,,,
