@@ -1,0 +1,11 @@
+This is a guide to how I scrapped quora. 
+
+1. I used Parsehub for scrapping all related questions to Emerging Technologies ("https://www.quora.com/topic/Emerging-Technologies?q=technology%20trends" 11.9.2022 up to-date). Downloaded into json file
+"ET_RCS_11DEP22_quora_emerging_tech_ques_url_parsehub"
+
+2. removed all irrelevant urls manually
+
+2. Used Parsehub again for each url in the json file and scrapped additional info, including: person_answered, answer, upvotes... Here I scrapped multiple urls from the file in section 2
+
+3. joined all data into a single table
+ 
