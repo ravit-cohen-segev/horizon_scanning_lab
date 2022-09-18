@@ -5,7 +5,7 @@ This is a guide to how I scrapped quora.
 
 2. removed all irrelevant urls manually
 
-2. Used Parsehub again for each url in the json file and scrapped additional info, including: person_answered, answer, upvotes... Here I scrapped multiple urls from the file in section 2
+2. "scrape_answers_to_tech_ques_utrls" is for parsing answers for related questions in url. Features were extracted like "Upvote", and FollowerCount and saved all in a joined table 
+in orizon_scanning_lab/Scrapers/Quora_RCS/answers_and_info/ET_RCS_22SEP15_quora_data.csv
 
-3. joined all data into a single table
  
