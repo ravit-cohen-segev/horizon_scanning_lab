@@ -70,7 +70,6 @@ def create_one_strings(d):
 # In[5]
 
 verb_pattern = [[{'POS': 'VERB', 'OP': '?'}],
-               [{'POS': 'ADV', 'OP': '*'}],
                [{'POS': 'VERB', 'OP': '+'}]]
 
 noun_pattern = [[{'POS': 'NOUN'}]]
@@ -85,4 +84,5 @@ out_df['title'] = titles
 out_df['link'] = df['link']
 out_df['spacy_verbs'] = create_one_strings(verb_d)
 out_df['spacy_nouns'] = create_one_strings(noun_d)
-    
+
+out_df.to_csv(r"C:\Users\Ravit\Documents\rnd\horizon_scanning_lab\articles\analyze_Articles\final_results\bertopic\extracted_verbs_nouns_before_bertopic.csv")
