@@ -16,7 +16,7 @@ from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer
 from pyclustering.cluster import cluster_visualizer, cluster_visualizer_multidim
 
 from sklearn.decomposition import PCA
-import plotly.express as px
+import matplotlib.pyplot as plt
 # In[]
 tagdict = load('help/tagsets/upenn_tagset.pickle')
 all_tags = list(tagdict)
@@ -249,12 +249,37 @@ print("Total WCE:", xmeans_instance.get_total_wce())
 
 pca = PCA(n_components=2)
 x_red = pca.fit_transform(x)
-x_red = pd.DataFrame(x_red)
-x_red.columns= ['x', 'y']
 
-n = np.arange(len(x_red))
-px.scatter(data_frame=x_red, x='x', y='y')
+plt.scatter(x=x_red[:,0], y=x_red[:,1])
+# In[]
+# plot interactive graphs with plotly
+from plotly.offline import download_plotlyjs, init_notebook_mode,  plot
+from plotly.graph_objs import *
 
+
+n_size = [20]*len(x_red)
+n_text = [str(i) for i in range(len(x_red))]
+
+
+trace0 = Scatter(
+    x=x_red[:,0],
+    y=x_red[:,1],
+    text= n_text,
+    mode='markers',
+    marker=dict(
+        size=n_size,
+    )
+)
+data = [trace0]
+layout = Layout(
+    showlegend=False,
+    height=600,
+    width=600,
+)
+
+fig = dict( data=data, layout=layout )
+
+plot(fig)  
 
 
 # In[13]
