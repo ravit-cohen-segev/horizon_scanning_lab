@@ -11,7 +11,7 @@ from elasticsearch import Elasticsearch
 
 # Define your OpenSearch domain and AWS credentials
 region_name = 'eu-central-1'
-domain_name = 'search-etech-dtnrcl2if6rlcml7hdtz4zrlk4.us-east-1.es.amazonaws.com'
+domain_name = ''
 endpoint_url = f'https://{domain_name}'
 index_name = 'row_id'
 json_file = r'C:\Users\Ravit\Documents\rnd\horizon_scanning_lab\feature_scripts\docs\timeline_datasets\temp.json'
@@ -21,7 +21,7 @@ opensearch_client = boto3.client('es', region_name=region_name)
 
 # Create an Elasticsearch client with the endpoint URL
 es = Elasticsearch(endpoint_url,
-                   http_auth=('ravit', 'Horizon1%'))
+                   http_auth=('', ''))
 
 # Upload the JSON file to OpenSearch using the Elasticsearch client
 with open(json_file, 'r') as f:
