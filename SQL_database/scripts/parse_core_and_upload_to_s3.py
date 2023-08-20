@@ -138,7 +138,7 @@ domain_name = 'search-etechdbsearch-6hrir27ks2ye5xnfwcnvmlppbe.eu-central-1.es.a
 index_name = 'core_db'
 endpoint_url = f'https://{domain_name}'
 
-my_client = wr.opensearch.connect(host=endpoint_url, username='horizondb', password='Et123456@')
+my_client = wr.opensearch.connect(host=endpoint_url, username='#####', password='######')
 
 # In[]
 # List objects in the folder
