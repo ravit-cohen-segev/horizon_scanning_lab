@@ -1,0 +1,44 @@
+PUT _ingest/pipeline/s3_pipeline
+{
+  "description": "Pipeline for parsing S3 data",
+  "processors": [
+    {
+      "attachment": {
+        "field": "data",
+        "indexed_chars": "-1"
+      }
+    },
+    {
+      "remove": {
+        "field": "data"
+      }
+    }
+  ]
+}
+
+PUT _template/s3_template
+{
+  "index_patterns": ["s3_data"],
+  "mappings": {
+    "properties": {
+      "attachment": {
+        "type": "text",
+        "analyzer": "english"
+      },
+      "key": {
+        "type": "keyword"
+      },
+      "bucket": {
+        "type": "keyword"
+      },
+      "created_date": {
+        "type": "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      }
+    }
+  }
+}
+
+POST _bulk
+{"index": {"_index": "s3_data"}}
+{"bucket": "technologydb", "key": "json_files/10May2023_parsed_news_data.json", "created_date": "2022-05-11T12:00:00Z", "data": "base64-encoded-data"}on_date']
